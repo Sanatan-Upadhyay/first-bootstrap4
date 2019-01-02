@@ -1,0 +1,1376 @@
+<! DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<title>first bootstrap</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+<style>
+
+
+
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track{
+	background-color: lightgrey;
+	border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: grey;
+	border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: darkgrey;
+}
+
+.dropdown-toggle::after{
+	border:none;
+}
+
+.carousel-inner img {
+	width:100%;
+	max-height:600px;
+}
+
+#overlayContent {
+	opacity: 0.85;
+}
+
+#colOverlay{
+	background-color: black; 
+	border-bottom:5px solid orange;
+}
+
+#imageHover{
+	display: none;
+}
+
+#imageHoverDisplay:hover #imageHover{
+	display: block;
+	background-color: rgba(255, 91, 55, 0.7);
+}
+
+.logoSlideImg{
+	width: 180px;
+	height: 60px;
+}
+
+.logoSlide{
+	width: 180px;
+	height: 60px;
+	border:4px solid lightgrey;
+}
+
+.logoSlide:hover{
+	border: 4px solid rgb(255, 91, 55);
+}
+
+.footerLink{
+	text-decoration: none;
+	color: white;
+}
+.footerLink:hover{
+	color: rgb(255, 91, 55);
+	text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+	<div class="container-fluid p-0">
+
+		<!-- collapse-->
+
+		<div class="collapse" id="infor">
+			<div class="bg-danger text-light p-5 font-weight-light">
+				<strong>We are available for any custom works this month</strong>
+				<span class="ml-3">Main office: Springville center X264, Park Ave S.01</span>
+				<span class="ml-3">Call us  (123) 456-7890 - (123) 555-7891</span>
+			</div>
+		</div>
+
+		<!--header-->
+
+		<header class="mb-4">
+			<div class="row m-0">
+				
+				<!--column 1-->
+
+				<div class="col-12 d-flex justify-content-end">
+					<button data-toggle="collapse" data-target="#infor" class="btn btn-danger mr-5 rounded-0">
+						<i class="fas fa-plus"></i>
+					</button>
+				</div>
+
+				<div class="col-12 d-flex justify-content-end p-2">
+					<span class="mr-5 shadow p-2">
+
+						<!-- sign up modal pages -->
+						<a href="#signUpModal" class="text-danger font-weight-bold" data-toggle="modal" style="font-size: 12px">
+							<i class="fas fa-user pr-1"></i>Sign up</a>
+
+							<div class="modal" id="signUpModal">
+								<div class="modal-dialog">
+									<div class="modal-content" id="modalcont">
+
+										<div class="modal-header bg-danger text-light pb-5">
+											<span style="font-size: 30px" class="font-weight-light"> Create an Account</span>
+											<button type="button" class="close" data-dismiss="modal">&times</button>
+										</div>
+
+										<div class="modal-body">
+											<form action="#">
+												<div class="form-group">
+													<label for="em"  class="text-sm-right mr-sm-1" style="width: 37%"> Email</label>
+													<input type="email" class="form-control d-sm-inline" id="em" placeholder="Email" style="width: 50%">
+												</div>
+
+												<div class="form-group">
+													<label for="pwd" class="text-sm-right mr-sm-1" style="width: 37%">Password</label>
+													<input type="password" class="form-control d-sm-inline" placeholder="Password" id="pwd" style="width: 50%">
+												</div>
+
+												<div class="form-group">
+													<label for="cpwd" class="text-sm-right mr-sm-1" style="width: 37%">Confirm Password
+													</label>
+													<input type="password" class="form-control d-sm-inline" placeholder="Password" id="cpwd" style="width: 50%">
+												</div>
+
+												<button type="submit" class="btn btn-danger d-sm-block mx-sm-auto">Sign Up</button>
+											</form>
+										</div>
+
+										<div class="modal-footer justify-content-center">
+											Already have an account? <a href="javascript:void(0)" class="text-danger" id="signin">Sign in</a>
+										</div>
+
+									</div>
+									
+								</div>	
+							</div>
+
+						<a href="javascript:void(0)" class="text-danger ml-2 font-weight-bold" style="font-size: 12px">Sign in</a>
+					</span>
+				</div>
+
+				<div class="col-12 col-md-7 d-flex p-5 p-md-0 pl-md-5 flex-column">
+					<img src="img/logo.png" style="width: 200px" class="mx-auto d-block mx-md-0 d-md-inline">
+					<span class="font-weight-light mt-1 d-block text-center d-md-inline text-md-left">Flat and trendy bootstrap template</span>
+				</div>
+
+				<!-- column 4-->
+
+				<div class="col-12 col-md-5 pr-md-5 font-weight-light">
+					<nav class="navbar navbar-expand-md justify-content-end p-0">
+						
+						<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation-menu">
+							<i class="fas fa-bars"></i>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navigation-menu">
+
+							<ul class="navbar-nav justify-content-center text-center" style="width: 100%">
+
+								<li class="nav-item flex-fill dropdown">
+									<a href="javascript:void(0)" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" style="font-size: 13px">
+										<span class="text-danger font-weight-bold">HOME<i class="fas fa-angle-down pl-1"></i></span>
+									</a>
+									<div class="dropdown-menu">
+										<a href="javascript:void:(0)" class="dropdown-item">Link1</a>
+										<a href="javascript:void:(0)" class="dropdown-item">Link2</a>
+										<a href="javascript:void:(0)" class="dropdown-item">Link3</a>
+									</div>
+								</li>
+
+								<li class="nav-item flex-fill dropdown">
+									<a href="javascript:void(0)" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" style="font-size: 13px">
+										<span class="font-weight-normal">FEATURES<i class="fas fa-angle-down pl-1"></i></span>
+									</a>
+									<div class="dropdown-menu">
+										<a href="javascript:void(0)" class="dropdown-item">link1</a>
+										<a href="javascript:void(0)" class="dropdown-item">link2</a>
+										<a href="javascript:void(0)" class="dropdown-item">link3</a>
+									</div>
+								</li>
+
+								<li class="nav-item flex-fill dropdown">
+									<a href="javascript:void(0)" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" style="font-size: 13px">
+										<span class="font-weight-normal">PAGES<i class="fas fa-angle-down pl-1"></i></span>
+									</a>
+									<div class="dropdown-menu">
+										<a href="javascript:void(0)" class="dropdown-item">link1</a>
+										<a href="javascript:void(0)" class="dropdown-item">link2</a>
+										<a href="javascript:void(0)" class="dropdown-item">link3</a>
+									</div>
+								</li>
+
+								<li class="nav-item flex-fill dropdown">
+									<a href="javascript:void(0)" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" style="font-size: 13px">
+										<span class="font-weight-normal">PORFOLIO<i class="fas fa-angle-down pl-1"></i></span>
+									</a>
+									<div class="dropdown-menu">
+										<a href="javascript:void(0)" class="dropdown-item">link1</a>
+										<a href="javascript:void(0)" class="dropdown-item">link2</a>
+										<a href="javascript:void(0)" class="dropdown-item">link3</a>
+									</div>
+								</li>
+
+								<li class="nav-item flex-fill dropdown">
+									<a href="javascript:void(0)" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" style="font-size: 13px">
+										<span class="font-weight-normal">BLOG<i class="fas fa-angle-down pl-1"></i></span>
+									</a>
+									<div class="dropdown-menu">
+										<a href="javascript:void(0)" class="dropdown-item">link1</a>
+										<a href="javascript:void(0)" class="dropdown-item">link2</a>
+										<a href="javascript:void(0)" class="dropdown-item">link3</a>
+									</div>
+								</li>
+
+								<li class="nav-item flex-fill">
+									<a href="javascript:void(0)" class="nav-link text-dark font-weight-normal" style="font-size: 13px">
+									CONTACT
+								</a>
+								</li>
+							</ul>
+
+						</div>
+
+					</nav>
+				</div>
+
+			</div>
+		</header>
+
+		<!-- sliidehow -->
+
+		<div class="card border-0">
+
+			<div class="carousel slide" data-ride="carousel" id="slideshow">
+				<!-- indicators -->
+				<ul class="carousel-indicators">
+					<li data-target="#slideshow" data-slide-to="0" class="active"></li>
+					<li data-target="#slideshow" data-slide-to="1"></li>
+					<li data-target="#slideshow" data-slide-to="2"></li>
+				</ul>
+
+				<div class="carousel-inner">
+					<div class="carousel-item active"><img src="img/slides/nivo/bg-1.jpg"></div>
+					<div class="carousel-item"><img src="img/slides/nivo/bg-2.jpg"></div>
+					<div class="carousel-item"><img src="img/slides/nivo/bg-3.jpg"></div>
+				</div>
+
+				<a class="carousel-control-prev" href="#slideshow" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+				<a class="carousel-control-next" href="#slideshow" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+
+			</div>
+
+			<div class="row p-0 w-75 mx-auto my-md-4 p-xl-5 card-img-overlay" id="overlayContent">
+				<div class="col col-md-9 col-lg-5 p-md-2 p-xl-4 mb-lg-4 text-light" id="colOverlay">
+					<h4 class="card-title font-weight-normal">Awesome <span class="font-weight-bold">features</span></h4>
+					<p class="card-text font-weight-light d-none d-sm-block">Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.</p>
+					<button class="btn btn-danger font-weight-light">Read more</button>
+				</div>
+			</div>
+		</div> <!-- slidehow ended -->
+
+
+		<!-- jumbotron heading -->
+
+		<div class="jumbotron">
+			<div class="row m-0">
+				<div class="col-12 col-lg-10 text-center p-0"><h1 class="font-weight-light">We've created more than <span class="font-weight-bold text-danger"> 5000 websites</span> this year!</h1></div>
+				<div class="col-12 col-lg-2 text-center text-sm-right mt-5 mt-lg-0 p-0"><button class="btn btn-danger font-weight-light pl-4 pr-4" style="border-radius: 35px 35px 35px 35px">REQUEST A QUOTE</button></div>
+			</div>
+		</div><!-- jumbotron heading end-->
+
+
+		<!-- 4 item -->
+		<div class="container-fluid">
+			<div class="row m-0 p-5">
+				<div class="col-12 col-md-3 mb-5 p-3 pb-md-5 text-center font-weight-light" style="border-bottom: 0.1px solid lightgrey">
+					<i class="fas fa-briefcase bg-danger p-3 rounded-circle text-light" style="font-size:25px"></i>
+					<h4 class="font-weight-light mb-4">Corporate business</h4>
+					<p>Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.</p>
+					<a href="javascript:void(0)" class="text-danger">Learn more</a>
+				</div>
+
+				<div class="col-12 col-md-3 mb-5 p-3 pb-md-5 text-center font-weight-light" style="border-bottom: 0.1px solid lightgrey">
+					<i class="fas fa-tv bg-danger p-3 rounded-circle text-light" style="font-size:25px"></i>
+					<h4 class="font-weight-light mb-4">Responsive theme</h4>
+					<p>Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.</p>
+					<a href="javascript:void(0)" class="text-danger">Learn more</a>
+				</div>
+
+				<div class="col-12 col-md-3 mb-5 p-3 pb-md-5 text-center font-weight-light" style="border-bottom: 0.1px solid lightgrey">
+					<i class="fas fa-flask bg-danger p-3 rounded-circle text-light" style="font-size:25px"></i>
+					<h4 class="font-weight-light mb-4">Coded carefully</h4>
+					<p>Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.</p>
+					<a href="javascript:void(0)" class="text-danger">Learn more</a>
+				</div>
+
+				<div class="col-12 col-md-3 mb-5 p-3 pb-md-5 text-center font-weight-light" style="border-bottom: 0.1px solid lightgrey">
+					<i class="fas fa-coffee bg-danger p-3 rounded-circle text-light" style="font-size:25px"></i>
+					<h4 class="font-weight-light mb-4">Sit and enjoy</h4>
+					<p>Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.</p>
+					<a href="javascript:void(0)" class="text-danger">Learn more</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- image collection -->
+
+		<div class="container-fluid p-0 pb-md-5 pl-md-5 pr-md-5">
+			<h2 class="p-3 font-weight-light">Some of my recent <span class="font-weight-bold">works</span></h2>
+			<div class="row m-0" style="border-bottom: 1px solid lightgrey">
+
+				<div class="col-12 col-md-3 mb-4"><!--col 1 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-01.jpg" class="card-img-top">
+						
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+							
+							<a href="#imageModal" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item active">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-3 mb-4"><!--col 2 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-02.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-1" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-1">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-1">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-1" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-1" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item active">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-1" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-1" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-3 mb-4"><!--col 3 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-03.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-2" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-2">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-2">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-2" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-2" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item active">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-2" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-2" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-12 col-md-3 mb-4"><!--col 4 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-04.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-3" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-3">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-3">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-3" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-3" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item active">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-3" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-3" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-12 col-md-3 mb-4"><!--col 5 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-05.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-4" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-4">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-4">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-4" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-4" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item active">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-4" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-4" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-3 mb-4"><!--col 6 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-06.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-5" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-5">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-5">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-5" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-5" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item active">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-5" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-5" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-3 mb-4"><!-- col 7 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-07.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-6" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-6">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-6">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-6" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-6" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item active">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-6" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-6" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-3 mb-4"><!--col 8 started-->
+					<div class="card border-0">
+						<img src="img\works\thumbs\image-08.jpg" class="card-img-top">
+						<div class="card-img-overlay p-0" id="imageHoverDisplay">
+
+							<a href="#imageModal-7" data-toggle="modal" id="imageHover" class="card-link">
+								<div class="display-4 h-100 d-flex justify-content-center">
+									<span class="text-success m-auto font-weight-light" style="font-size:100px">+</span>
+								</div>
+							</a>
+							<!-- modal started -->
+							<div class="modal pt-3 pl-3 pr-3 pl-sm-5 pr-sm-5" id="imageModal-7">
+								<button type="button" class="close btn btn-warning p-3" data-dismiss="modal">&times</button>
+								
+								<div class="container p-0" style="max-width: 700px">
+									
+									<div class="carousel slide" data-ride="carousel" id="imagesInnerSlide-7">
+										
+										<ul class="carousel-indicators">
+											<li data-target="#imagesInnerSlide-7" data-slide-to="0" class="active"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="1"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="2"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="3"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="4"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="5"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="6"></li>
+											<li data-target="#imagesInnerSlide-7" data-slide-to="7"></li>
+										</ul>
+
+										<div class="carousel-inner">
+											
+											<div class="carousel-item">
+												<img src="img\works\full\image-01-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The City</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-02-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Office</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-03-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-04-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-05-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Sea</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-06-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">Clouds</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item">
+												<img src="img\works\full\image-07-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Mountains</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+											<div class="carousel-item active">
+												<img src="img\works\full\image-08-full.jpg" class="img-fluid">
+												<div class="container-fluid p-4 bg-dark text-light">
+													<h4 class="font-weight-light">The Dark</h4>
+													<p class="font-weight-light mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.</p>
+												</div>
+											</div>
+
+										</div>
+
+										<a href="#imagesInnerSlide-7" class="carousel-control-prev" data-slide="prev">
+											<span class="carousel-control-prev-icon"></span>
+										</a>
+
+										<a href="#imagesInnerSlide-7" class="carousel-control-next" data-slide="next">
+											<span class="carousel-control-next-icon"></span>
+										</a>
+
+									</div>
+
+								</div>
+							</div><!--modal ended-->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- image collection end-->
+
+
+		<!-- logo scroll -->
+
+		<div class="container mb-5 mt-5">
+			<h2 class="font-weight-light mb-5">Very satified <span class="font-weight-bold">clients</span></h2>
+			<div class="container-fluid p-0 d-flex no-wrap" style="overflow: auto;height: 120px">
+				
+				<a href="javascript:void(0)" class="ml-4 mr-4 logoSlide d-block">
+					<img src="img\dummies\clients\client1.png" class="logoSlideImg">
+				</a>
+
+				<a href="javascript:void(0)" class="ml-4 mr-4 logoSlide d-block">
+					<img src="img\dummies\clients\client2.png" class="logoSlideImg">
+				</a>
+
+				<a href="javascript:void(0)" class="ml-4 mr-4 logoSlide d-block">
+					<img src="img\dummies\clients\client3.png" class="logoSlideImg">
+				</a>
+
+				<a href="javascript:void(0)" class="ml-4 mr-4 logoSlide d-block">
+					<img src="img\dummies\clients\client4.png" class="logoSlideImg">
+				</a>
+
+				<a href="javascript:void(0)" class="ml-4 mr-4 logoSlide d-block">
+					<img src="img\dummies\clients\client5.png" class="logoSlideImg">
+				</a>
+
+				<a href="javascript:void(0)" class="ml-4 mr-4 logoSlide d-block">
+					<img src="img\dummies\clients\client6.png" class="logoSlideImg">
+				</a>
+
+			</div>
+		</div>
+
+
+		<!-- footer iso here -->
+
+		<footer class="container-fluid p-0">
+			<div class="row text-light bg-dark p-5 m-0">
+				
+				<div class="col-12 col-md-3 pb-5">
+					<h4>Browse pages</h4>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">About the company</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Our services</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Meet our team</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Explore our portfolio</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Get in touch with us</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">About the company</a>
+				</div>
+
+				<div class="col-12 col-md-3 pb-5">
+					<h4>Important stuff</h4>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Press release</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">term and conditions</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Privacy policy</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Carrer center</a>
+					<a href="javascript:void(0)" class="d-block footerLink font-weight-light">Flattern forum</a>
+				</div>
+
+				<div class="col-12 col-md-3 pb-5">
+					<h4>Flickr photostream</h4>
+					
+					<a href="javascript:void(0)">
+						<img src="http://farm7.staticflickr.com/6165/6218214021_a2a60437db_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm3.staticflickr.com/2557/4125014813_502036f9c7_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm7.staticflickr.com/6172/6219082960_f7f41b614d_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm5.staticflickr.com/4032/4402188770_9de708fb01_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm3.staticflickr.com/2457/3865628754_636bbd1b82_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm3.staticflickr.com/2736/4110656100_d6164c214e_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm3.staticflickr.com/2757/4418632968_aa31535f8b_s.jpg" class="m-1" style="width:60px">
+					</a>
+					<a href="javascript:void(0)">
+						<img src="http://farm5.staticflickr.com/4022/4542057615_0c275e0752_s.jpg" class="m-1" style="width:60px">
+					</a>
+				</div>
+
+				<div class="col-12 col-md-3 pb-5">
+					<h4>Get in touch with us</h4>
+					<address>Flattern studio, Pte Ltd Springville center X264, Park Ave S.01 Semarang 16425 Indonesia</address>
+					<p class="mb-0 font-weight-light"><i class="fas fa-phone"></i> (123) 456-7890 - (123) 555-7891</p>
+					<p class="font-weight-light"><i class="fas fa-envelope"></i> email@domainname.com</p>
+				</div>
+			</div>
+
+			<div class="container-fluid p-0 bg-dark">
+				<div class="row m-0 p-3">
+					<div class="col-12 col-md-10">
+						<p class="mb-0 text-light font-weight-light"> &copy; Flattern - All right reserved.</p>
+						<a href="javascript:void(0)" class="footerLink font-weight-light">Designed by BootstrapMade</a>
+					</div>
+					<div class="col-12 col-md-2">
+						<a href="javascript:void(0)" class="text-light"><i class="fab fa-facebook-square"></i></a>
+						<a href="javascript:void(0)" class="text-light"><i class="fab fa-twitter"></i></a>
+						<a href="javascript:void(0)" class="text-light"><i class="fab fa-google-plus-square"></i></a>
+						<a href="javascript:void(0)" class="text-light"><i class="fab fa-pinterest"></i></a>
+						<a href="javascript:void(0)" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+</body>
+
+
+</html>
